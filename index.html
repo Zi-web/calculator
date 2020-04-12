@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.5/vivus.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="particles" id="particles"></div>
+    </div>
+    <!------Калькулятор даты родов ------->
+    <section class="conatiner">
+      <div class="birth">
+        <h2 class="birth__title">Калькулятор даты родов</h2>
+        <div class="birth__wrapper">
+          <p class="birth__text">Укажите дату первого дня последней менструации (день.месяц.год):</p>
+          <div class="birth__input">
+            <input type="date" class="birth__calendar" id="date" required> 
+          </div>
+        </div>
+        <button onclick="calc();" class="btn  btn--birth  birth__btn">Рассчитать</button>
+        <div class="birth__result" id="result"></div>
+        <div class="birth__error" id="error"></div>
+      </div>
+    </section>
+
+    <!--------------------delivery----------------->
+    <section class="delivery" id="delivery">
+      <header style="text-align: center;">
+        <h2 class="delivery__title">Доставка товара</h2>
+        <p class="delivery__subtitle">Выберите любой удобный вам способ получения товара</p>
+      </header>
+      <div class="delivery__wrapper">
+        <figure class="delivery__item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" id="my-svg1">
+            <circle cx="42" cy="31" r="13" fill="none" stroke="#495771"/>
+            <path d="M98,65V81H89a6,6,0,0,0-12,0H70V48H87Zm-7,0L85,55H77V65H91Z" fill="none" stroke="#495771"/>
+            <path d="M23.75,82H14a1,1,0,0,1-1-1V31a1,1,0,0,1,1-1H24v2H15V80h8.75v2Z" fill="none" stroke="#495771"/>
+            <path d="M30,88a7,7,0,1,1,7-7A7,7,0,0,1,30,88Zm0-12a5,5,0,1,0,5,5A5,5,0,0,0,30,76Z" fill="none" stroke="#495771"/>
+            <path d="M42,50A19,19,0,1,1,61,31,19,19,0,0,1,42,50Zm0-36A17,17,0,1,0,59,31,17,17,0,0,0,42,14Z" fill="none" stroke="#495771"/>
+            <rect x="5" y="57" width="16" height="2" fill="none" stroke="#495771"/>
+            <rect x="70" y="80" width="7" height="2" fill="none" stroke="#495771"/>
+            <path d="M98,82H89V80h8V65.29L86.46,49H70V47H87a1,1,0,0,1,.84.46l11,17A1,1,0,0,1,99,65V81A1,1,0,0,1,98,82Z" fill="none" stroke="#495771"/>
+            <path d="M70,82H36.25V80H69V32H60V30H70a1,1,0,0,1,1,1V81A1,1,0,0,1,70,82Z" fill="none" stroke="#495771"/>
+            <path d="M83,88a7,7,0,1,1,7-7A7,7,0,0,1,83,88Zm0-12a5,5,0,1,0,5,5A5,5,0,0,0,83,76Z" fill="none" stroke="#495771"/>
+            <path d="M91,66H77a1,1,0,0,1-1-1V55a1,1,0,0,1,1-1h8a1,1,0,0,1,.86.49l6,10A1,1,0,0,1,91,66ZM78,64H89.23l-4.8-8H78v8Z" fill="none" stroke="#495771"/>
+            <path d="M48,32.52H42a1,1,0,0,1-1-1v-9h2v8h5v2Z" fill="none"stroke="#495771"/>
+            <rect x="1" y="47" width="20" height="2" fill="none" stroke="#495771"/>
+            <rect x="5" y="37" width="16" height="2" fill="none" stroke="#495771"/>
+            <rect width="100" height="100" fill="none" stroke="none"/></svg>
+          <figcaption>
+            <h4>Самовывоз</h4>
+              <p>Купленный товар вы можете забрать по адресу г. Минск, пр. Независимости, 1 </p>
+              <p>пн-суб. 10.00 – 20.00<br>
+              Воск. выходной</p>
+          </figcaption>
+        </figure>
+        <figure class="delivery__item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" id="my-svg2">
+            <circle cx="42" cy="31" r="13" fill="none" stroke="#495771"/>
+            <path d="M98,65V81H89a6,6,0,0,0-12,0H70V48H87Zm-7,0L85,55H77V65H91Z" fill="none" stroke="#495771"/>
+            <path d="M23.75,82H14a1,1,0,0,1-1-1V31a1,1,0,0,1,1-1H24v2H15V80h8.75v2Z" fill="none" stroke="#495771"/>
+            <path d="M30,88a7,7,0,1,1,7-7A7,7,0,0,1,30,88Zm0-12a5,5,0,1,0,5,5A5,5,0,0,0,30,76Z" fill="none" stroke="#495771"/>
+            <path d="M42,50A19,19,0,1,1,61,31,19,19,0,0,1,42,50Zm0-36A17,17,0,1,0,59,31,17,17,0,0,0,42,14Z" fill="none" stroke="#495771"/>
+            <rect x="5" y="57" width="16" height="2" fill="none" stroke="#495771"/>
+            <rect x="70" y="80" width="7" height="2" fill="none" stroke="#495771"/>
+            <path d="M98,82H89V80h8V65.29L86.46,49H70V47H87a1,1,0,0,1,.84.46l11,17A1,1,0,0,1,99,65V81A1,1,0,0,1,98,82Z" fill="none" stroke="#495771"/>
+            <path d="M70,82H36.25V80H69V32H60V30H70a1,1,0,0,1,1,1V81A1,1,0,0,1,70,82Z" fill="none" stroke="#495771"/>
+            <path d="M83,88a7,7,0,1,1,7-7A7,7,0,0,1,83,88Zm0-12a5,5,0,1,0,5,5A5,5,0,0,0,83,76Z" fill="none" stroke="#495771"/>
+            <path d="M91,66H77a1,1,0,0,1-1-1V55a1,1,0,0,1,1-1h8a1,1,0,0,1,.86.49l6,10A1,1,0,0,1,91,66ZM78,64H89.23l-4.8-8H78v8Z" fill="none" stroke="#495771"/>
+            <path d="M48,32.52H42a1,1,0,0,1-1-1v-9h2v8h5v2Z" fill="none"stroke="#495771"/>
+            <rect x="1" y="47" width="20" height="2" fill="none" stroke="#495771"/>
+            <rect x="5" y="37" width="16" height="2" fill="none" stroke="#495771"/>
+            <rect width="100" height="100" fill="none" stroke="none"/></svg>
+          <figcaption>
+            <h4>Курьером</h4>
+              <p>Купленный товар вам привозит наш курьер. </p><p>Стоимость доставки по г. Минску – 10 руб.</p>
+          </figcaption>
+        </figure>
+        <figure class="delivery__item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" id="my-svg3">
+            <circle cx="42" cy="31" r="13" fill="none" stroke="#495771"/>
+            <path d="M98,65V81H89a6,6,0,0,0-12,0H70V48H87Zm-7,0L85,55H77V65H91Z" fill="none" stroke="#495771"/>
+            <path d="M23.75,82H14a1,1,0,0,1-1-1V31a1,1,0,0,1,1-1H24v2H15V80h8.75v2Z" fill="none" stroke="#495771"/>
+            <path d="M30,88a7,7,0,1,1,7-7A7,7,0,0,1,30,88Zm0-12a5,5,0,1,0,5,5A5,5,0,0,0,30,76Z" fill="none" stroke="#495771"/>
+            <path d="M42,50A19,19,0,1,1,61,31,19,19,0,0,1,42,50Zm0-36A17,17,0,1,0,59,31,17,17,0,0,0,42,14Z" fill="none" stroke="#495771"/>
+            <rect x="5" y="57" width="16" height="2" fill="none" stroke="#495771"/>
+            <rect x="70" y="80" width="7" height="2" fill="none" stroke="#495771"/>
+            <path d="M98,82H89V80h8V65.29L86.46,49H70V47H87a1,1,0,0,1,.84.46l11,17A1,1,0,0,1,99,65V81A1,1,0,0,1,98,82Z" fill="none" stroke="#495771"/>
+            <path d="M70,82H36.25V80H69V32H60V30H70a1,1,0,0,1,1,1V81A1,1,0,0,1,70,82Z" fill="none" stroke="#495771"/>
+            <path d="M83,88a7,7,0,1,1,7-7A7,7,0,0,1,83,88Zm0-12a5,5,0,1,0,5,5A5,5,0,0,0,83,76Z" fill="none" stroke="#495771"/>
+            <path d="M91,66H77a1,1,0,0,1-1-1V55a1,1,0,0,1,1-1h8a1,1,0,0,1,.86.49l6,10A1,1,0,0,1,91,66ZM78,64H89.23l-4.8-8H78v8Z" fill="none" stroke="#495771"/>
+            <path d="M48,32.52H42a1,1,0,0,1-1-1v-9h2v8h5v2Z" fill="none"stroke="#495771"/>
+            <rect x="1" y="47" width="20" height="2" fill="none" stroke="#495771"/>
+            <rect x="5" y="37" width="16" height="2" fill="none" stroke="#495771"/>
+            <rect width="100" height="100" fill="none" stroke="none"/></svg>
+          <figcaption>
+            <h4>Экспресс-доставка</h4>
+              <p>Купленный товар мы может отправить в любой город РБ через доступные службы доставки. </p><p>Стоимость от 10 до 30 руб. </p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <!------Калькулятор 2 ------->
+    <section class="container container--2">
+      <div class="profit">
+        <h2 class="profit__title">Получаете 5000 рублей за рекомендацию нашего продукта</h2>
+        <p class="profit__subtitle">За каждого кто купит по вашей рекомендации мы платим 5000 рублей</p>
+        <p class="profit__subtitle2">Рассчитайте сколько вы получите денег</p>
+        <p class="profit__subtitle2">Количество купивших</p>
+        <form name="nomer_scrollbar" class="form">
+          <input type="range" name="ageInputName" id="ageInputId" min="1" max="100" value="10"/>
+          <span class="form__num"><output name="ageOutputName" id="ageOutputId"></output></span>
+        </form>
+        <div class="profit__result">Ваш доход <span id="profit__result">50000</span> рублей</div>
+        <button class="btn  btn--profit  profit__btn">Хочу такой доход</button>
+        <div class="profit__descr">
+          <ul>
+            <li>- Количество приглашенных людей неограничено</li>
+            <li>- Потолок дохода неограничен</li>
+            <li>- Сколько привлекли, столько заработали</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  <script type="text/javascript" src="js/calculator.js"></script>
+  <script type="text/javascript" src="js/profit.js"></script>
+  <script type="text/javascript" src="js/anim.js"></script>
+  <script type="text/javascript" src="js/particles.js"></script>
+  </body>
+</html>
