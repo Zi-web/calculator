@@ -398,6 +398,7 @@ template {
   opacity: 1;
 }
 .message p {
+  font-family: Montserrat;
   margin: 0 auto;
   padding-top: 100px;
   text-align: center;
