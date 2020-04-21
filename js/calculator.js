@@ -1,14 +1,1 @@
-function calc() {
-      var date = new Date(document.getElementById("date").value);
-      var result = document.getElementById("result"); 
-      var error = document.getElementById("error");
-
-      if ((document.getElementById("date").value) == '') {
-            error.innerHTML = "Для рассчета необходимо выбрать дату первого дня последней менструации.";
-      }
-      else {
-            date.setDate(date.getDate() + 280);
-            result.innerHTML = "Предполагаемая дата родов: "+ date.toLocaleDateString('ru-RU');
-            error.innerHTML = "";
-      }
-}
+function calc(){var e=new Date(document.getElementById("date").value),t=document.getElementById("result"),n=document.getElementById("error");""==document.getElementById("date").value?n.innerHTML="Для рассчета необходимо выбрать дату первого дня последней менструации.":(e.setDate(e.getDate()+280),t.innerHTML="Предполагаемая дата родов: "+e.toLocaleDateString("ru-RU"),n.innerHTML="")}
