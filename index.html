@@ -10,13 +10,21 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.5/vivus.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/png">
   </head>
   <body>
+    <div class="preloader">
+      <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor"
+          d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+        </path>
+      </svg>
+    </div>
     <div class="main">
       <div class="particles" id="particles"></div>
       <div class="message" id="message">
-        <p>WhatsApp: +375293957525</p>
-        <p>Эл.почта: zstr2011@yandex.by</p>
+        <!---<p>WhatsApp: +375293957525</p>
+        <p>Эл.почта: zstr2011@yandex.by</p>---->
       </div>
 
     </div>
@@ -121,7 +129,11 @@
         <p class="profit__subtitle2">Рассчитайте сколько вы получите денег</p>
         <p class="profit__subtitle2">Количество купивших</p>
         <form name="nomer_scrollbar" class="form">
-          <input type="range" name="ageInputName" id="ageInputId" min="1" max="100" value="10"/>
+          <input type="range" name="ageInputName" id="ageInputId" min="1" max="100" value="10" class="e-range" />
+          <div class="custom-track" aria-hidden="true">
+            <span class="custom-fill"></span>
+            <span class="custom-thumb"></span>
+          </div>
           <span class="form__num">
             <output name="ageOutputName" id="ageOutputId"></output>
           </span>
@@ -138,10 +150,253 @@
       </div>
     </section>
 
+    <!------Тест с отправкой на почту ------->
+    <section class="selection">
+      <div class="selection__wrapper">
+        <h2>Пройдя мини-тест из 6 вопросов</h2>
+        <p>Вы получите не только точный расчет, но и:</p>
+        <div class="selection__items">
+          <figure class="selection__item">
+            <img src="img/img1.png" alt="">
+            <figcaption>Гарантированный подарок</figcaption>
+          </figure>
+          <figure class="selection__item  selection__item--2">
+            <img src="img/img2-2.png" alt="">
+            <figcaption>Скидку до -50% </figcaption>
+          </figure>
+          <figure class="selection__item">
+            <img src="img/img3.png" alt="">
+            <figcaption>Гарантию лучшей цены</figcaption>
+          </figure>
+        </div>
+        <section class="question">
+          <div class="question__wrapper">
+            <span class="question__triangle"></span>
+            <div class="question__left">
+              <h2 class="question__title">Вопрос <span id="question__title-num">1</span> из 6 </h2>
+                <div class="progress__items">
+                  <div id="progress__item-1" class="progress__item  progress__item-1   active"></div>
+                  <div id="progress__item-2" class="progress__item  progress__item-2"></div>
+                  <div id="progress__item-3" class="progress__item"></div>
+                  <div id="progress__item-4" class="progress__item"></div>
+                  <div id="progress__item-5" class="progress__item"></div>
+                  <div id="progress__item-6" class="progress__item"></div>
+                </div>
+
+              <div class="question__content  question-1" id="question-1">
+                
+                  <div class="question__subtitle"><span class="question__subtitle--num">1</span>Выберите, где планируете повесить жалюзи:</div>
+                  <div class="question__item-wrapper">
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item1" value="В квартиру" checked>
+                        <label for="item1"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/1.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">В квартиру</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item2" value="В доме">
+                        <label for="item2"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/2.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">В доме</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item3" value="В офис">
+                        <label for="item3"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/3.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">В офис</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item4" value="В магазин">
+                        <label for="item4"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/4.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">В магазин</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item5" value="В ресторан">
+                        <label for="item5"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/5.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">В ресторан</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item6" value="Другое">
+                        <label for="item6"></label>
+                        <div class="question__img">
+                          <img class="question__input--img2" src="img/6.png" alt="" width="94" height="94">
+                        </div>
+                        <span class="question__input--text">Другое</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="btn1" class="question__btn">
+                    <input type="submit" value="Далее" class="btn  btn--question">
+                    <div class="arrow">
+                      <span>&#8250;</span>
+                      <span>&#8250;</span>
+                      <span>&#8250;</span>
+                    </div>
+                  </div>
+                </div>
+
+              <div class="question__content  question-2"  id="question-2">
+                
+                  <div class="question__subtitle"><span class="question__subtitle--num">2</span>Какие жалюзи вам необходимы?</div>
+                  <div class="question__item-wrapper">
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item7" value="В квартиру" checked>
+                        <label for="item7"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/7.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">Рулонные шторы</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item8" value="В доме">
+                        <label for="item8"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/8.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">Вертикальные жалюзи</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item9" value="В офис">
+                        <label for="item9"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/9.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">Горизонтальные жалюзи</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item10" value="В магазин">
+                        <label for="item10"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/10.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">Зебра (день/ночь)</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item11" value="В ресторан">
+                        <label for="item11"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/11.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">Плиссе</span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div id="btn2" class="question__btn">
+                    <input type="submit" value="Далее" class="btn  btn--question">
+                    <div class="arrow">
+                      <span>&#8250;</span>
+                      <span>&#8250;</span>
+                      <span>&#8250;</span>
+                    </div>
+                  </div>
+                </div>
+              
+              <div class="question__content  question-3"  id="question-3">
+               
+                  <div class="question__subtitle"><span class="question__subtitle--num">3</span>Какие из рулонных жалюзи Вам нужны?</div>
+                  <div class="question__item-wrapper">
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item12" value="В квартиру" checked>
+                        <label for="item12"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/12.png" alt="">
+                        </div>
+                        <span class="question__input--text">Рулонные Юни1(с коробом и направляющими)</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item13" value="В доме">
+                        <label for="item13"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/8.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">Рулонные шторы</span>
+                      </div>
+                    </div>
+
+                    <div class="question__item">
+                      <div class="question__input">
+                        <input type="checkbox" id="item14" value="В офис">
+                        <label for="item14"></label>
+                        <div class="question__img">
+                          <img class="question__input--img" src="img/9.jpg" alt="">
+                        </div>
+                        <span class="question__input--text">Рулонные МИНИ</span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div id="btn3" class="question__btn">
+                    <input type="submit" value="Далее" class="btn  btn--question" id="bot-submit">
+                    <div class="arrow">
+                      <span>&#8250;</span>
+                      <span>&#8250;</span>
+                      <span>&#8250;</span>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+            <div class="question__righ">
+                
+            </div>
+          </div>
+         </section>
+      </div>
+    </section>
+
   <script type="text/javascript" src="js/calculator.js"></script>
   <script type="text/javascript" src="js/profit.js"></script>
   <script type="text/javascript" src="js/anim.js"></script>
   <script type="text/javascript" src="js/particles.js"></script>
   <script type="text/javascript" src="js/timer.js"></script>
+  <script type="text/javascript" src="js/test.js"></script>
+  <script type="text/javascript" src="js/preloader.js"></script>
   </body>
 </html>
