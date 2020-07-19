@@ -20,13 +20,39 @@
         </path>
       </svg>
     </div>
+     <!------Калькулятор стоимости поездки ------->
+    <section class="conatiner">
+      <div class="calc-count">
+        <h2 class="calc-count__title">Калькулятор стоимости поездки</h2>
+         <p class="calc-count__subtitle">Рассчитайте стоимость вашей поездки:</p>
+        <div class="calc-count__wrapper">
+          <div class="calc-count__input">
+            <label for="">Общее расстояние</label>
+            <input type="number" class="calc-count__dist" id="distance" required placeholder="1000"> 
+          </div>
+          <div class="calc-count__input">
+            <label for="fuel">Расход топлива</label>
+            <input type="number" class="calc-count__fuel" id="fuel" required placeholder="7.8"> 
+          </div>
+          <div class="calc-count__input">
+            <label for="cost">Стоимость топлива</label>
+            <input type="number" class="calc-count__cost" id="cost" required placeholder="70.5"> 
+          </div>
+          <div class="calc-count__input">
+             <button onclick="calcCount();" class="btn  btn--calc-count  calc-count__btn">Рассчитать</button>
+          </div>
+        </div>
+        <div class="calc-count__result" id="result"></div>
+        <div class="calc-count__error" id="error"></div>
+      </div>
+    </section>
+
     <div class="main">
       <div class="particles" id="particles"></div>
       <div class="message" id="message">
         <!---<p>WhatsApp: +375293957525</p>
         <p>Эл.почта: zstr2011@yandex.by</p>---->
       </div>
-
     </div>
     <!------Калькулятор даты родов ------->
     <section class="conatiner">
@@ -151,6 +177,7 @@
     </section>
 
     <!------Тест с отправкой на почту ------->
+    <!---
     <section class="selection">
       <div class="selection__wrapper">
         <h2>Пройдя мини-тест из 6 вопросов</h2>
@@ -390,7 +417,9 @@
          </section>
       </div>
     </section>
+    --->
 
+  <script type="text/javascript" src="js/calc-count.js"></script>
   <script type="text/javascript" src="js/calculator.js"></script>
   <script type="text/javascript" src="js/profit.js"></script>
   <script type="text/javascript" src="js/anim.js"></script>

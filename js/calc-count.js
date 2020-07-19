@@ -1,0 +1,26 @@
+function calcCount() {
+      const distance = document.getElementById("distance").value;
+      const fuel = document.getElementById("fuel").value;
+      const cost =  document.getElementById("cost").value;
+      const error = document.getElementById("error");
+      const result = document.getElementById("result"); 
+      let count = 0;
+    
+      count = (fuel * distance / 100) * cost;
+
+      result.innerHTML = "Стоимость поездки составит " + count;
+      error.innerHTML = "";
+
+      if (distance === "") {
+            error.innerHTML = "Необходимо заполнить расстояние которое планируете проехать";
+            result.innerHTML = "";
+      } else if (fuel === "") {
+         error.innerHTML = "Необходимо заполнить расход топлива";
+         result.innerHTML = "";
+      }
+      else if (cost === "") {
+            error.innerHTML = "Заполните стоимость топлива";
+            result.innerHTML = "";
+      }
+
+}

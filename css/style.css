@@ -1,3 +1,9 @@
+@font-face {
+  font-family: ProximaNova-Regular;
+  src: url('../fonts/ProximaNova-Regular.woff') format('woff'), url('../fonts/ProximaNova-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -350,7 +356,7 @@ template {
   display: none;
 }
 .btn {
-  font-family: 'Montserrat', sans-serif;
+  font-family: ProximaNova-Regular;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -415,6 +421,17 @@ template {
   -webkit-box-shadow: 0 0px 0 0 #b02021;
           box-shadow: 0 0px 0 0 #b02021;
   margin-top: 7px;
+}
+.btn--calc-count {
+  text-align: center;
+  text-transform: lowercase;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 5px;
+  background-color: #ff5912;
+  font-size: 14px;
+  color: #fff;
 }
 .main {
   width: 100%;
@@ -1446,6 +1463,105 @@ input[type="checkbox"]:not(:checked) + label:before {
     -webkit-transform: translate(30px, 0px);
             transform: translate(30px, 0px);
   }
+}
+.calc-count {
+  max-width: 320px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: #eee;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #eee;
+  -webkit-box-shadow: 0px 0px 20px #eee;
+          box-shadow: 0px 0px 20px #eee;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: ProximaNova-Regular;
+}
+.calc-count__title {
+  margin: 0 auto 15px auto;
+  text-align: center;
+  line-height: 24px;
+  color: #000;
+  font-size: 24px;
+}
+.calc-count__subtitle {
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 20px;
+}
+.calc-count__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.calc-count__input {
+  width: 47%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.calc-count__input label {
+  font-size: 13px;
+}
+.calc-count__input input {
+  height: 35px;
+  line-height: 35px;
+  max-width: 100%;
+  border-radius: 5px;
+  border: 0px solid #ddd;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 5px;
+}
+.calc-count__input input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 5px 0 #ddd;
+          box-shadow: 0 0 5px 0 #ddd;
+}
+.calc-count__input input:hover {
+  cursor: pointer;
+}
+.calc-count__result {
+  text-align: center;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  margin: 20px auto 0 auto;
+  line-height: 22px;
+  color: #138804;
+  font-size: 18px;
+  font-weight: bold;
+}
+.calc-count__error {
+  text-align: center;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  margin: 10px auto 0 auto;
+  color: #de1f05;
+  font-size: 14px;
+  font-weight: bold;
 }
 @media screen and (max-width: 940px) {
   .container--2 {
