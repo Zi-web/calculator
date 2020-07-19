@@ -8,7 +8,7 @@ function calcCount() {
     
       count = (fuel * distance / 100) * cost;
 
-      result.innerHTML = "Стоимость поездки составит " + count;
+      result.innerHTML = "Приблизительная стоимость вашей поездки: " + "<br>" + Math.ceil(count) + " рублей";
       error.innerHTML = "";
 
       if (distance === "") {
