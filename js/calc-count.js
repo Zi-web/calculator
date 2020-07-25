@@ -2,8 +2,8 @@ function calcCount() {
       const distance = document.getElementById("distance").value;
       const fuel = document.getElementById("fuel").value;
       const cost =  document.getElementById("cost").value;
-      const error = document.getElementById("error");
-      const result = document.getElementById("result"); 
+      const error = document.getElementById("calc-error");
+      const result = document.getElementById("calc-result"); 
       let count = 0;
     
       count = (fuel * distance / 100) * cost;
