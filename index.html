@@ -20,7 +20,38 @@
         </path>
       </svg>
     </div>
-     <!------Калькулятор стоимости поездки ------->
+    <!------Калькулятор кубов бруса ------->
+    <section class="conatiner">
+      <div class="brus">
+        <h2 class="brus__title">Расчет кубов бруса</h2>
+         <p class="brus__subtitle"></p>
+        <div class="brus__wrapper">
+          <div class="brus__input">
+            <label for="">Длина бруса</label>
+            <input type="number" class="calc-count__dist" id="distance" required placeholder="1000"> 
+          </div>
+          <div class="brus__input">
+            <label for="fuel">Ширина бруса</label>
+            <input type="number" class="calc-count__fuel" id="fuel" required placeholder="7.8"> 
+          </div>
+          <div class="brus__input">
+            <label for="cost">Толщина бруса</label>
+            <input type="number" class="calc-count__cost" id="cost" required placeholder="70.5"> 
+          </div>
+          <div class="brus__input">
+            <label for="cost">Количество бруса</label>
+            <input type="number" class="calc-count__cost" id="cost" required placeholder="70.5"> 
+          </div>
+          <div class="brus__input">
+             <button onclick="calcCount();" class="btn  btn--calc-count  calc-count__btn">Рассчитать</button>
+          </div>
+        </div>
+        <div class="brus__result" id="calc-result"></div>
+        <div class="brus__error" id="calc-error"></div>
+      </div>
+    </section>
+
+    <!------Калькулятор стоимости поездки ------->
     <section class="conatiner">
       <div class="calc-count">
         <h2 class="calc-count__title">Калькулятор стоимости поездки</h2>
@@ -47,11 +78,15 @@
       </div>
     </section>
 
-    <div class="main">
+    <!------Main------->
+    <div class="main" id="main">
       <div class="particles" id="particles"></div>
       <div class="message" id="message">
         <!---<p>WhatsApp: +375293957525</p>
         <p>Эл.почта: zstr2011@yandex.by</p>---->
+      </div>
+      <div id="call" class="call">
+        <span>У нас сегодня АКЦИЯ!</span>
       </div>
     </div>
     <!------Калькулятор даты родов ------->
@@ -176,249 +211,99 @@
       </div>
     </section>
 
-    <!------Тест с отправкой на почту ------->
-    <!---
-    <section class="selection">
-      <div class="selection__wrapper">
-        <h2>Пройдя мини-тест из 6 вопросов</h2>
-        <p>Вы получите не только точный расчет, но и:</p>
-        <div class="selection__items">
-          <figure class="selection__item">
-            <img src="img/img1.png" alt="">
-            <figcaption>Гарантированный подарок</figcaption>
-          </figure>
-          <figure class="selection__item  selection__item--2">
-            <img src="img/img2-2.png" alt="">
-            <figcaption>Скидку до -50% </figcaption>
-          </figure>
-          <figure class="selection__item">
-            <img src="img/img3.png" alt="">
-            <figcaption>Гарантию лучшей цены</figcaption>
-          </figure>
-        </div>
-        <section class="question">
-          <div class="question__wrapper">
-            <span class="question__triangle"></span>
-            <div class="question__left">
-              <h2 class="question__title">Вопрос <span id="question__title-num">1</span> из 6 </h2>
-                <div class="progress__items">
-                  <div id="progress__item-1" class="progress__item  progress__item-1   active"></div>
-                  <div id="progress__item-2" class="progress__item  progress__item-2"></div>
-                  <div id="progress__item-3" class="progress__item"></div>
-                  <div id="progress__item-4" class="progress__item"></div>
-                  <div id="progress__item-5" class="progress__item"></div>
-                  <div id="progress__item-6" class="progress__item"></div>
-                </div>
+<!------список задач---------------->
+  <section class="lists">  
+        <h1 class="heading">Список задач</h1>
 
-              <div class="question__content  question-1" id="question-1">
-                
-                  <div class="question__subtitle"><span class="question__subtitle--num">1</span>Выберите, где планируете повесить жалюзи:</div>
-                  <div class="question__item-wrapper">
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item1" value="В квартиру" checked>
-                        <label for="item1"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/1.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">В квартиру</span>
-                      </div>
-                    </div>
+    <ol class="todo-list">
+      <li>Договориться о встрече</li>
+      <li class="is-important">Подготовить презентацию</li>
+    </ol>
 
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item2" value="В доме">
-                        <label for="item2"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/2.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">В доме</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item3" value="В офис">
-                        <label for="item3"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/3.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">В офис</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item4" value="В магазин">
-                        <label for="item4"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/4.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">В магазин</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item5" value="В ресторан">
-                        <label for="item5"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/5.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">В ресторан</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item6" value="Другое">
-                        <label for="item6"></label>
-                        <div class="question__img">
-                          <img class="question__input--img2" src="img/6.png" alt="" width="94" height="94">
-                        </div>
-                        <span class="question__input--text">Другое</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div id="btn1" class="question__btn">
-                    <input type="submit" value="Далее" class="btn  btn--question">
-                    <div class="arrow">
-                      <span>&#8250;</span>
-                      <span>&#8250;</span>
-                      <span>&#8250;</span>
-                    </div>
-                  </div>
-                </div>
-
-              <div class="question__content  question-2"  id="question-2">
-                
-                  <div class="question__subtitle"><span class="question__subtitle--num">2</span>Какие жалюзи вам необходимы?</div>
-                  <div class="question__item-wrapper">
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item7" value="В квартиру" checked>
-                        <label for="item7"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/7.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">Рулонные шторы</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item8" value="В доме">
-                        <label for="item8"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/8.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">Вертикальные жалюзи</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item9" value="В офис">
-                        <label for="item9"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/9.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">Горизонтальные жалюзи</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item10" value="В магазин">
-                        <label for="item10"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/10.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">Зебра (день/ночь)</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item11" value="В ресторан">
-                        <label for="item11"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/11.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">Плиссе</span>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div id="btn2" class="question__btn">
-                    <input type="submit" value="Далее" class="btn  btn--question">
-                    <div class="arrow">
-                      <span>&#8250;</span>
-                      <span>&#8250;</span>
-                      <span>&#8250;</span>
-                    </div>
-                  </div>
-                </div>
-              
-              <div class="question__content  question-3"  id="question-3">
-               
-                  <div class="question__subtitle"><span class="question__subtitle--num">3</span>Какие из рулонных жалюзи Вам нужны?</div>
-                  <div class="question__item-wrapper">
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item12" value="В квартиру" checked>
-                        <label for="item12"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/12.png" alt="">
-                        </div>
-                        <span class="question__input--text">Рулонные Юни1(с коробом и направляющими)</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item13" value="В доме">
-                        <label for="item13"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/8.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">Рулонные шторы</span>
-                      </div>
-                    </div>
-
-                    <div class="question__item">
-                      <div class="question__input">
-                        <input type="checkbox" id="item14" value="В офис">
-                        <label for="item14"></label>
-                        <div class="question__img">
-                          <img class="question__input--img" src="img/9.jpg" alt="">
-                        </div>
-                        <span class="question__input--text">Рулонные МИНИ</span>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div id="btn3" class="question__btn">
-                    <input type="submit" value="Далее" class="btn  btn--question" id="bot-submit">
-                    <div class="arrow">
-                      <span>&#8250;</span>
-                      <span>&#8250;</span>
-                      <span>&#8250;</span>
-                    </div>
-                  </div>
-                </div>
-
+    <form class="todo-form" action="" method="post">
+      <label class="input-label" for="todo-input">Добавьте задачу</label>
+      <input type="text" class="todo-input" id="todo-input" required>
+      <button type="button" class="todo-priority is-important">Важная задача</button>
+      <button type="submit" class="todo-add">Добавить в список</button>
+    </form>
+  </section>
+<!------tooltip---------------->
+  
+  <section class="comment-feed container">
+          <h2>Комментарии</h2>
+          <ol class="comment-list">
+            <li class="user-comment">С точки зрения банальной эрудиции, каждый индивидуум, цинизм помыслов которого ассоциирует концепции парадоксальных иллюзий, просто не может не игнорировать критерии утопического субъективизма. А с точки зрения ценности или содержания этого логического утверждения посредством чисто отрицательного предиката и определяется, прибавляет ли оно что-нибудь ко всей совокупности знания.<br>
+              Иммануил Кант<br>
+            Думаете, что разбираетесь в человеческой природе лучше Канта?</li>
+          </ol>
+          <form action="https://echo.htmlacademy.ru/courses" method="post" class="comment-form">
+            <div class="comment-inner">
+              <label class="comment-label" for="comment-textarea">ваш комментарий</label>
+              <textarea class="comment-field comment-area" rows="3" placeholder="Комментарий" required id="comment-textarea"></textarea>
             </div>
-            <div class="question__righ">
-                
-            </div>
-          </div>
-         </section>
-      </div>
-    </section>
-    --->
+            <span class="text-counter">Использовано <output class="char-counter" for="comment-textarea">0</output>/142 символов</span>
+            <button class="button submit-button" type="submit">Отправить</button>
+          </form>
+  </section>
 
+<!---------keyboard------------->
+<div class="keyboard-wrapper">
+<section class="computer">
+  <div class="display-wrapper">
+    <div class="display"></div>
+  </div>
+  <button class="button clear" type="button">Очистить</button>
+</section>
+
+<section class="keyboard">
+  <div class="keyboard-line">
+    <button class="button key" type="button" id="index_0">й</button>
+    <button class="button key" type="button" id="index_1">ц</button>
+    <button class="button key" type="button" id="index_2">у</button>
+    <button class="button key" type="button" id="index_3">к</button>
+    <button class="button key" type="button" id="index_4">е</button>
+    <button class="button key" type="button" id="index_5">н</button>
+    <button class="button key" type="button" id="index_6">г</button>
+    <button class="button key" type="button" id="index_7">ш</button>
+    <button class="button key" type="button" id="index_8">щ</button>
+    <button class="button key" type="button" id="index_9">з</button>
+    <button class="button key" type="button" id="index_10">х</button>
+    <button class="button key" type="button" id="index_11">ъ</button>
+  </div>
+  <div class="keyboard-line">
+    <button class="button key" type="button" id="index_12">ф</button>
+    <button class="button key" type="button" id="index_13">ы</button>
+    <button class="button key" type="button" id="index_14">в</button>
+    <button class="button key" type="button" id="index_15">а</button>
+    <button class="button key" type="button" id="index_16">п</button>
+    <button class="button key" type="button" id="index_17">р</button>
+    <button class="button key" type="button" id="index_18">о</button>
+    <button class="button key" type="button" id="index_19">л</button>
+    <button class="button key" type="button" id="index_20">д</button>
+    <button class="button key" type="button" id="index_21">ж</button>
+    <button class="button key" type="button" id="index_22">э</button>
+    <button class="button key" type="button" id="index_23">ё</button>
+  </div>
+  <div class="keyboard-line">
+    <button class="button key" type="button" id="index_24">я</button>
+    <button class="button key" type="button" id="index_25">ч</button>
+    <button class="button key" type="button" id="index_26">с</button>
+    <button class="button key" type="button" id="index_27">м</button>
+    <button class="button key" type="button" id="index_28">и</button>
+    <button class="button key" type="button" id="index_29">т</button>
+    <button class="button key" type="button" id="index_30">ь</button>
+    <button class="button key" type="button" id="index_31">б</button>
+    <button class="button key" type="button" id="index_32">ю</button>
+  </div>
+  <div class="keyboard-line">
+    <button class="button key space" type="button" id="index_33"> </button>
+  </div>
+</section>
+</div>
+<button class="up-button" type="button">
+    ↑
+  <span class="visually-hidden">Наверх</span>
+</button>
   <script type="text/javascript" src="js/calc-count.js"></script>
   <script type="text/javascript" src="js/calculator.js"></script>
   <script type="text/javascript" src="js/profit.js"></script>
@@ -427,5 +312,11 @@
   <script type="text/javascript" src="js/timer.js"></script>
   <script type="text/javascript" src="js/test.js"></script>
   <script type="text/javascript" src="js/preloader.js"></script>
+  <script type="text/javascript" src="js/mause-mess.js"></script>
+  <script type="text/javascript" src="js/brus.js"></script>
+  <script src="js/lists.js"></script>
+  <script src="js/tooltip.js"></script>
+  <script src="js/keyboard.js"></script>
+  <script src="js/up-button.js"></script>
   </body>
 </html>

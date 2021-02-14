@@ -33,6 +33,7 @@ result.onclick = function() {
 
 */
 
+/*
 "use strict";
 let question1 = document.getElementById('question-1');
 let question2 = document.getElementById('question-2');
